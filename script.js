@@ -7,17 +7,32 @@ let firstCard;
 let secondCard;
 
 function flipCard() {
-    this.classList.toggle('flip');
+    this.classList.toggle('flip'); // the clicked card will add/remove the class
 
     if (!hasFlippedCard) {
+        // first click
         hasFlippedCard = true;
         firstCard = this;
-        console.log({ hasFlippedCard, firstCard });
     }
     else {
+        // second click
         hasFlippedCard = false;
         secondCard = this;
-        console.log({ hasFlippedCard, secondCard });
+
+        // do cards match?
+        if (firstCard.dataset.card === secondCard.dataset.card) {
+            // it's a match:
+            firstCard.removeEventListener('click', flipCard)
+            secondCard.removeEventListener('click', flipCard)
+        }
+        else {
+            // it's not a match:
+            setTimeout(() => {
+                firstCard.classList.remove('flip');
+                secondCard.classList.remove('flip');
+            }, 1300);
+        }
+
     }
 }
 
