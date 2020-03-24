@@ -1,13 +1,28 @@
 'use strict';
 
-let cards = document.querySelectorAll('.js-memory-card');
+const cards = document.querySelectorAll('.js-memory-card');
 
-const flipCard = () => {
-    console.log('hago', this); // si pinchas en los diferentes id (luke y leia) te dirán cosas diferentes
-};
+let hasFlippedCard = false;
+let firstCard;
+let secondCard;
 
-for (const card of cards) {
-    card.addEventListener('click', flipCard);
+function flipCard() {
+    this.classList.toggle('flip');
+
+    if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+        console.log({ hasFlippedCard, firstCard });
+    }
+    else {
+        hasFlippedCard = false;
+        secondCard = this;
+        console.log({ hasFlippedCard, secondCard });
+    }
 }
 
+for (const card of cards) {
+    card.addEventListener('click', flipCard)
+};
 // cards.forEach(card => card.addEventListener('click', flipCard));
+
