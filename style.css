@@ -6,5 +6,52 @@
 
 body {
     height: 100vh;
-    background-color: rgb(73, 204, 117);
+    background-color: rgba(73, 204, 117, 0.541);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 100px;
+}
+
+.memory-game {
+    margin: 10px;
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 2px solid rgb(68, 32, 201); */
+    background-color: rgba(36, 231, 101, 0.671);
+}
+
+.memory-card {
+    width: 23%;
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+}
+
+memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.front,
+.back {
+    /* border: 2px solid green; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: rgb(10, 78, 44);
+    border-radius: 5px;
+}
+
+.footer {
+    margin: 10px 0 5px 0;
+    font-size: 8px;
 }
