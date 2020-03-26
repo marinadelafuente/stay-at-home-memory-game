@@ -50,13 +50,16 @@ function flipCard() {
 
 // Function to check if the two cards are a match:
 const checkForMatch = () => {
+    let htmlCode = "";
     let cardsMatch = firstCard.dataset.card === secondCard.dataset.card;
     if (cardsMatch) {
         deactivateCards();
         matchCounter += 1;
         if (matchCounter == (cards.length / 2)) {
-            return youWon.innerHTML = `You Won!!!`;
+            htmlCode += `<p class="winning__message">Congratulations</p>`
+            htmlCode += `<img src="img/win.svg">`
         }
+        youWon.innerHTML = `${htmlCode}`;
     }
     else {
         unflipCards()

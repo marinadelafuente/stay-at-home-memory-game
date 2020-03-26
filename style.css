@@ -88,12 +88,27 @@ img {
     background: rgba(12, 80, 46, 0.541);
 }
 
+.winning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winning__message {
+    text-align: center;
+    font-size: 34px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
 .reset-btn {
     background: rgb(255, 255, 255);
     cursor: pointer;
     width: 15vw;
-    height: 20px;
-    margin-bottom: 10px;
+    height: 30px;
+    margin: 20px;
     text-shadow: 0px 0px 0px rgb(7, 7, 7);
     outline-width: 0;
     border-radius: 10px;
@@ -104,10 +119,6 @@ img {
     -webkit-box-shadow: 0px 2px 5px 2px rgba(122, 113, 122, 1);
     -moz-box-shadow: 0px 2px 5px 2px rgba(122, 113, 122, 1);
     box-shadow: 0px 2px 5px 2px rgba(122, 113, 122, 1);
-}
-
-.winning__message {
-    text-align: center;
 }
 
 .reset-btn:active {
@@ -150,5 +161,10 @@ img {
         /* height: calc(33.333% - 10px); */
         position: relative;
         margin: 5px;
+    }
+
+    .reset-btn {
+        width: 15vw;
+        height: 33px;
     }
 }
