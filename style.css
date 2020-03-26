@@ -55,8 +55,8 @@ img {
 }
 
 .memory-card:hover {
-    /* border: rgba(6, 68, 39, 0.836) groove 1px; */
-    box-shadow: inset 0px 0px 5px -1px rgba(122, 113, 122, 1);
+    background: rgb(11, 71, 5);
+    background: linear-gradient(0deg, rgb(13, 58, 9) 0%, rgba(7, 53, 66, 0.848) 63%);
 }
 
 .memory-card:active {
