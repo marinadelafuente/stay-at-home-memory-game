@@ -25,7 +25,6 @@ body {
 
 .subtitle {
     padding-top: 13px;
-    font-family: 'Arimo', sans-serif;
     text-align: center;
 }
 
@@ -56,7 +55,8 @@ img {
 }
 
 .memory-card:hover {
-    border: rgb(6, 68, 39) groove 3px;
+    /* border: rgba(6, 68, 39, 0.836) groove 1px; */
+    box-shadow: inset 0px 0px 5px -1px rgba(122, 113, 122, 1);
 }
 
 .memory-card:active {
@@ -77,7 +77,6 @@ img {
     padding: 10px;
     background: rgb(11, 71, 5);
     background: linear-gradient(0deg, rgba(11, 71, 5, 1) 0%, rgba(25, 98, 20, 0.8482580532212886) 63%);
-    /* background-color: rgb(22, 80, 51); */
     border-radius: 5px;
     /* Safari */
     -webkit-backface-visibility: hidden;
@@ -86,20 +85,18 @@ img {
 
 .front {
     transform: rotateY(180deg);
-    background-color: rgba(12, 80, 46, 0.541);
+    background: rgba(12, 80, 46, 0.541);
 }
 
 .reset-btn {
     background: rgb(255, 255, 255);
     cursor: pointer;
     width: 15vw;
-    height: 3vh;
+    height: 20px;
     margin-bottom: 10px;
-    font-family: 'Arimo', sans-serif;
+    text-shadow: 0px 0px 0px rgb(7, 7, 7);
     outline-width: 0;
     border-radius: 10px;
-    -webkit-box-shadow: inset 0px 0px 5px -1px rgba(122, 113, 122, 1);
-    -moz-box-shadow: inset 0px 0px 5px -1px rgba(122, 113, 122, 1);
     box-shadow: inset 0px 0px 5px -1px rgba(122, 113, 122, 1);
 }
 
@@ -107,6 +104,10 @@ img {
     -webkit-box-shadow: 0px 2px 5px 2px rgba(122, 113, 122, 1);
     -moz-box-shadow: 0px 2px 5px 2px rgba(122, 113, 122, 1);
     box-shadow: 0px 2px 5px 2px rgba(122, 113, 122, 1);
+}
+
+.winning__message {
+    text-align: center;
 }
 
 .reset-btn:active {

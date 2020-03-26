@@ -8,6 +8,7 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard;
 let secondCard;
+let matchCounter = 0;
 
 // Function to shuffle the cards at the start of the game
 function shuffle() {
@@ -38,10 +39,28 @@ function flipCard() {
     }
 }
 
+// function win() {
+//     for (const card of cards) {
+//         if (card.classList.contains('flip').length === cards.length) {
+//             console.log('won')
+//             return youWon.innerHTML = `You Won!!!`;
+//         }
+//     }
+// }
+
 // Function to check if the two cards are a match:
 const checkForMatch = () => {
     let cardsMatch = firstCard.dataset.card === secondCard.dataset.card;
-    cardsMatch ? deactivateCards() : unflipCards();
+    if (cardsMatch) {
+        deactivateCards();
+        matchCounter += 1;
+        if (matchCounter == (cards.length / 2)) {
+            return youWon.innerHTML = `You Won!!!`;
+        }
+    }
+    else {
+        unflipCards()
+    };
 }
 
 const closeCards = () => {
@@ -53,18 +72,10 @@ const deactivateCards = () => {
     // it's a match: cards cannot be flipped anymore
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-
     closeCards();
 }
 
-function win() {
-    let htmlCode = '';
-    cards.forEach(card => {
-        if (card.contains('flip'))
-            htmlCode += `<p>You Won!!!</p>`;
-    })
-    youWon.innerHTML = `${htmlCode}`;
-}
+
 
 const unflipCards = () => {
     // it's not a match: cards flip again after 1s
@@ -74,7 +85,7 @@ const unflipCards = () => {
         secondCard.classList.remove('flip');
 
         closeCards();
-    }, 1000);
+    }, 700);
 }
 
 const reset = () => {
