@@ -1,7 +1,8 @@
 'use strict';
 
 const cards = document.querySelectorAll('.js-memory-card');
-const resetButton = document.querySelector('.js-reset')
+const resetButton = document.querySelector('.js-reset');
+const youWon = document.querySelector('.js-win');
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -57,7 +58,12 @@ const deactivateCards = () => {
 }
 
 function win() {
-
+    let htmlCode = '';
+    cards.forEach(card => {
+        if (card.contains('flip'))
+            htmlCode += `<p>You Won!!!</p>`;
+    })
+    youWon.innerHTML = `${htmlCode}`;
 }
 
 const unflipCards = () => {
@@ -70,6 +76,12 @@ const unflipCards = () => {
         closeCards();
     }, 1000);
 }
+
+const reset = () => {
+    location.reload();
+}
+
+resetButton.addEventListener('click', reset);
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
