@@ -6,7 +6,10 @@
 
 body {
     height: 100vh;
-    background-color: rgba(73, 204, 117, 0.541);
+    background-color: #eba95d;
+    background-image: url(img/background.jpg);
+    background-position: bottom;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,7 +40,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgba(36, 231, 101, 0.671);
+    background-color: rgb(36, 231, 101);
     perspective: 1000px;
 }
 
