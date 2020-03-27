@@ -57,7 +57,8 @@ const checkForMatch = () => {
         matchCounter += 1;
         if (matchCounter == (cards.length / 2)) {
             htmlCode += `<p class="winning__message">Congratulations</p>`
-            htmlCode += `<img src="img/win.svg">`
+            htmlCode += `<img class="winning__cup" src="img/win.svg">`
+            resetButton.classList.add("reset-btn__animation");
         }
         youWon.innerHTML = `${htmlCode}`;
     }
@@ -77,8 +78,6 @@ const deactivateCards = () => {
     secondCard.removeEventListener('click', flipCard);
     closeCards();
 }
-
-
 
 const unflipCards = () => {
     // it's not a match: cards flip again after 1s

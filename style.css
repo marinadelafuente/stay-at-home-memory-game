@@ -54,11 +54,6 @@ img {
     border-radius: 10px;
 }
 
-.memory-card:hover {
-    background: rgb(11, 71, 5);
-    background: linear-gradient(0deg, rgb(13, 58, 9) 0%, rgba(7, 53, 66, 0.848) 63%);
-}
-
 .memory-card:active {
     transform: scale(.97);
     transition: transform .2s;
@@ -70,7 +65,6 @@ img {
 
 .front,
 .back {
-    /* border: 2px solid green; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -81,6 +75,11 @@ img {
     /* Safari */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+.back:hover {
+    background: rgb(11, 71, 5);
+    background: radial-gradient(circle, rgb(85, 200, 16, 0.848) 0%, rgb(20, 90, 14) 63%);
 }
 
 .front {
@@ -101,6 +100,16 @@ img {
     font-family: 'Liu Jian Mao Cao', cursive;
     text-transform: uppercase;
     margin-bottom: 10px;
+    animation: appear 3s 1;
+}
+
+.winning__cup {
+    animation: appear 3s 1;
+    transition: transform 1.5s;
+}
+
+.winning__cup:hover {
+    transform: rotateY(180deg);
 }
 
 .reset-btn {
@@ -126,8 +135,41 @@ img {
     outline: 1px solid black;
 }
 
+.reset-btn__animation {
+    animation: getBigger 5s 3s infinite;
+}
+
+@keyframes appear {
+
+    0% {
+        transform: scale(0)
+    }
+
+    75% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(0.9)
+    }
+}
+
+@keyframes getBigger {
+
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.50)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
 .footer {
-    /* margin: 10px 0 5px 0; */
     font-size: 8px;
 }
 
