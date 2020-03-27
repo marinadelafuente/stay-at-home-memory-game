@@ -39,15 +39,6 @@ function flipCard() {
     }
 }
 
-// function win() {
-//     for (const card of cards) {
-//         if (card.classList.contains('flip').length === cards.length) {
-//             console.log('won')
-//             return youWon.innerHTML = `You Won!!!`;
-//         }
-//     }
-// }
-
 // Function to check if the two cards are a match:
 const checkForMatch = () => {
     let htmlCode = "";
